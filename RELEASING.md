@@ -14,6 +14,17 @@ GO111MODULE=on go get k8s.io/release/cmd/release-notes
 
 You'll also need a GitHub Personal Access Token with permission to read repositories. It should be exported as `GITHUB_TOKEN`.
 
+## Updating dependencies
+
+You should update the dependencies of our service. The easiest way to do it is to create a PR with the changes with:
+
+```
+go get -v -u -d ./...
+go mod tidy
+```
+
+
+
 # Cutting a release
 
 Set a target version:
